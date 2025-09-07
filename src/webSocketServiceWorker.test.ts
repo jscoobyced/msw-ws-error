@@ -2,7 +2,7 @@ import { ws } from 'msw'
 import { WebSocket } from 'ws'
 import { server } from './mocks/mswServer'
 
-const serverUrl = 'wss://127.0.0.1:6789/audio'
+const serverUrl = 'wss://127.0.0.1:6789/message'
 
 const myWebSocket = ws.link(serverUrl)
 const handler = [
@@ -14,7 +14,7 @@ const handler = [
   }),
 ]
 
-describe('audioWebSocket - success', () => {
+describe('WebSocket - success', () => {
   beforeAll(() => {
     server.use(...handler)
   })
@@ -23,10 +23,8 @@ describe('audioWebSocket - success', () => {
     const socket = new WebSocket(serverUrl, { protocol: 'wss' })
     socket.onopen = () => {
       console.log('WebSocket client: Connection opened')
-      const testMessage = 'Hello, WebSocket!'
-      console.log('WebSocket client: Sending message:', testMessage)
-      socket.send(testMessage)
     }
     expect(socket).toBeDefined()
+    socket.send('hello')
   })
 })
