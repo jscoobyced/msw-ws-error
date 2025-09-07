@@ -12,7 +12,7 @@ You will get an error like this:
 
 ```
  ✓ src/webSocketServiceWorker.test.ts (1 test) 7ms
-   ✓ audioWebSocket - success > should send text message 5ms
+   ✓ WebSocket - success > should send text message 5ms
 ⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
 
 Vitest caught 1 unhandled error during the test run.
